@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .dashboard {
+      display: flex;
+      height: 100vh;
+      flex-direction: column;
+      border: 2px solid #000;
+    }
+
+    .header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      font-size: 20px;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .main {
+      display: flex;
+      flex: 1;
+    }
+
+    .sidebar {
+      width: 200px;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+
+    .sidebar a {
+      display: block;
+      margin: 10px 0;
+      text-decoration: none;
+      color: purple;
+    }
+
+    .content {
+      flex: 1;
+      padding: 20px;
+    }
+
+    .footer {
+      background-color: #4CAF50;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+
+    /* Dark Mode Styles */
+    .dark-mode {
+      background-color: #222;
+      color: #ccc;
+    }
+
+    .dark-mode .header,
+    .dark-mode .footer {
+      background-color: #333;
+      color: #ccc;
+    }
+
+    .dark-mode .sidebar {
+      background-color: #444;
+    }
+
+    .dark-mode .content {
+      background-color: #111;
+    }
+
+    .dark-mode .sidebar a {
+      color: #66ccff;
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard" id="dashboard">
+    <div class="header">
+      Admin Dashboard
+      <label><input type="checkbox" id="toggleMode"> Dark Mode</label>
+    </div>
+
+    <div class="main">
+      <div class="sidebar">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Users</a></li>
+          <li><a href="#">Settings</a></li>
+        </ul>
+      </div>
+
+      <div class="content">
+        <h2>Welcome, Admin!</h2>
+        <p>This is the main content area. Add charts, tables, or reports here.</p>
+      </div>
+    </div>
+
+    <div class="footer">
+      © 2025 Admin Panel
+    </div>
+  </div>
+
+  <script>
+    const toggle = document.getElementById("toggleMode");
+    const dashboard = document.getElementById("dashboard");
+
+    toggle.addEventListener("change", () => {
+      dashboard.classList.toggle("dark-mode");
+    });
+  </script>
+</body>
+</html>
